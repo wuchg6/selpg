@@ -1,4 +1,6 @@
 # selpg
+
+简介
 使用go语言开发Linux命令行实用程序中的selpg
 selpg代表SELect PaGes。selpg 允许用户指定从输入文本抽取的页的范围，这些输入文本可以来自文件或另一个进程。
 

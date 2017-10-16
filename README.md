@@ -40,7 +40,7 @@ selpg 通过以下方法记住当前页号：如果输入是每页行数固定�
 
 测试结果（这里测试数据就用selpg.go文件）</br>
 1.测试错误输入的情况</br>
-https://github.com/wuchg6/selpg/raw/master/errorTest.png </br>
+ ![image](https://github.com/wuchg6/selpg/raw/master/errorTest.png)</br>
 2.测试程序的输入方式</br>
 https://github.com/wuchg6/selpg/inputTest.png </br>
 3.测试程序结果的输出方式</br>

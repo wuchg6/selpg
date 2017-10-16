@@ -79,10 +79,24 @@ c</br>
 </br>
 var (</br>
 6.</br>
+[cg@localhost selpg]$ ./selgp -s2 -e5 -l3 <selgp.go</br>
+import (</br>
+        "fmt"</br>
+        "os"</br>
+        "os/exec"</br>
+        "strconv"</br>
+        "bufio"</br>
+        "io"</br>
+        "io/ioutil"</br>
+)</br>
+</br>
+var (</br>
+        maxInt int = 1 << 32 - 1</br>
+7.</br>
 [cg@localhost selpg]$ ./selgp -s3 -e7 -l2 selgp.go | grep os</br>
 	"os"</br>
 	"os/exec"</br>
-7.</br>
+8.</br>
 [cg@localhost selpg]$ ./selgp -s3 -e7 -l2 selgp.go >result 2>debug </br>
 [cg@localhost selpg]$ cat result </br>
 	"fmt"</br>
@@ -97,20 +111,20 @@ var (</br>
 var (</br>
 [cg@localhost selpg]$ cat debug</br> 
 [cg@localhost selpg]$ </br>
-8.</br>
+9.</br>
 [cg@localhost selpg]$ ./selgp -s-1 -e7 -l2 selgp.go >result 2>debug </br>
 [cg@localhost selpg]$ cat result </br>
 [cg@localhost selpg]$ cat debug </br>
 ./selgp: invalid start page -1</br>
 </br>
 USAGE: ./selgp -sstartPage -eendPage [ -f | -llinesPerPage ] [ -ddest ] [ inFilename ]</br>
-9.</br>
+10.</br>
 [cg@localhost selpg]$ ls</br>
 debug  result  selgp  selgp.go</br>
 [cg@localhost selpg]$ ./selgp -s2 -e2 -l2 test >output 2>&1</br>
 [cg@localhost selpg]$ cat output </br>
 ./selgp: input file "test" does not exist</br>
 </br>
-10. （没有打印机，无法进一步测试）</br>
+11. （没有打印机，无法进一步测试）</br>
 [cg@localhost selpg]$ ./selgp -s3 -e7 -l2 -dp selgp.go </br>
 lp: The printer or class does not exist.</br>

@@ -42,9 +42,9 @@ selpg 通过以下方法记住当前页号：如果输入是每页行数固定�
 1.测试错误输入的情况</br>
  ![image](https://github.com/wuchg6/selpg/raw/master/errorTest.png)</br>
 2.测试程序的输入方式</br>
-https://github.com/wuchg6/selpg/inputTest.png </br>
+ ![image](https://github.com/wuchg6/selpg/raw/master/inputTest.png)</br>
 3.测试程序结果的输出方式</br>
-https://github.com/wuchg6/selpg/outputTest.png </br>
+ ![image](https://github.com/wuchg6/selpg/raw/master/outputTest.png)</br>
 4.测试lp（没有打印机，所以无法测试正确的情况）</br>
-https://github.com/wuchg6/selpg/lpTest.png </br>
+ ![image](https://github.com/wuchg6/selpg/raw/master/lpTest.png)</br>
 

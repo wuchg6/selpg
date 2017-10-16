@@ -191,7 +191,7 @@ func processInput() {
 			}
 
 			lineCount++
-			if (lineCount == pageLen) {
+			if (lineCount > pageLen) {
 				pageCount++
 				lineCount = 0
 			}

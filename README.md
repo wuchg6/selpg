@@ -39,93 +39,12 @@ selpg -s10 -e20 -dlp1
 selpg 通过以下方法记住当前页号：如果输入是每页行数固定的，则 selpg 统计新行数，直到达到页长度后增加页计数器。如果输入是换页定界的，则 selpg 改为统计换页符。这两种情况下，只要页计数器的值在起始页和结束页之间这一条件保持为真，selpg 就会输出文本（逐行或逐字）。当那个条件为假（也就是说，页计数器的值小于起始页或大于结束页）时，则 selpg 不再写任何输出。瞧！您得到了想输出的那些页。
 
 测试结果（这里测试数据就用selpg.go文件）</br>
-1.</br>
-[cg@localhost selpg]$ ./selgp</br>
-./selgp: not enough arguments</br>
-</br>
-USAGE: ./selgp -sstartPage -eendPage [ -f | -llinesPerPage ] [ -ddest ] [ inFilename ]</br>
-2. （startPage > endPage）</br>
-[cg@localhost selpg]$ ./selgp -s10 -e5</br>
-./selgp: invalid end page 5</br>
-</br>
-USAGE: ./selgp -sstartPage -eendPage [ -f | -llinesPerPage ] [ -ddest ] [ inFilename ]</br>
-3.</br>
-[cg@localhost selpg]$ cat selgp.go | ./selgp -s2 -e3 -l3</br>
-import (</br>
-	"fmt"</br>
-	"os"</br>
-	"os/exec"</br>
-	"strconv"</br>
-	"bufio"v
-4.</br>
-[cg@localhost selpg]$ ./selgp -s2 -e2 -l2</br>
-a</br>
-b</br>
-c</br>
-d</br>
-end</br>
-b</br>
-c</br>
-5.</br>
-[cg@localhost selpg]$ ./selgp -s3 -e7 -l2 selgp.go </br>
-	"fmt"</br>
-	"os"</br>
-	"os/exec"</br>
-	"strconv"</br>
-	"bufio"</br>
-	"io"</br>
-	"io/ioutil"</br>
-)</br>
-</br>
-var (</br>
-6.</br>
-[cg@localhost selpg]$ ./selgp -s2 -e5 -l3 <selgp.go</br>
-import (</br>
-        "fmt"</br>
-        "os"</br>
-        "os/exec"</br>
-        "strconv"</br>
-        "bufio"</br>
-        "io"</br>
-        "io/ioutil"</br>
-)</br>
-</br>
-var (</br>
-        maxInt int = 1 << 32 - 1</br>
-7.</br>
-[cg@localhost selpg]$ ./selgp -s3 -e7 -l2 selgp.go | grep os</br>
-	"os"</br>
-	"os/exec"</br>
-8.</br>
-[cg@localhost selpg]$ ./selgp -s3 -e7 -l2 selgp.go >result 2>debug </br>
-[cg@localhost selpg]$ cat result </br>
-	"fmt"</br>
-	"os"</br>
-	"os/exec"</br>
-	"strconv"</br>
-	"bufio"</br>
-	"io"</br>
-	"io/ioutil"</br>
-)</br>
-</br>
-var (</br>
-[cg@localhost selpg]$ cat debug</br> 
-[cg@localhost selpg]$ </br>
-9.</br>
-[cg@localhost selpg]$ ./selgp -s-1 -e7 -l2 selgp.go >result 2>debug </br>
-[cg@localhost selpg]$ cat result </br>
-[cg@localhost selpg]$ cat debug </br>
-./selgp: invalid start page -1</br>
-</br>
-USAGE: ./selgp -sstartPage -eendPage [ -f | -llinesPerPage ] [ -ddest ] [ inFilename ]</br>
-10.</br>
-[cg@localhost selpg]$ ls</br>
-debug  result  selgp  selgp.go</br>
-[cg@localhost selpg]$ ./selgp -s2 -e2 -l2 test >output 2>&1</br>
-[cg@localhost selpg]$ cat output </br>
-./selgp: input file "test" does not exist</br>
-</br>
-11. （没有打印机，无法进一步测试）</br>
-[cg@localhost selpg]$ ./selgp -s3 -e7 -l2 -dp selgp.go </br>
-lp: The printer or class does not exist.</br>
+1.测试错误输入的情况</br>
+https://github.com/wuchg6/selpg/errorTest.png </br>
+2.测试程序的输入方式</br>
+https://github.com/wuchg6/selpg/inputTest.png </br>
+3.测试程序结果的输出方式</br>
+https://github.com/wuchg6/selpg/outputTest.png </br>
+4.测试lp（没有打印机，所以无法测试正确的情况）</br>
+https://github.com/wuchg6/selpg/lpTest.png </br>
 

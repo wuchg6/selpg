@@ -39,6 +39,8 @@ selpg -s10 -e20 -dlp1
 selpg 通过以下方法记住当前页号：如果输入是每页行数固定的，则 selpg 统计新行数，直到达到页长度后增加页计数器。如果输入是换页定界的，则 selpg 改为统计换页符。这两种情况下，只要页计数器的值在起始页和结束页之间这一条件保持为真，selpg 就会输出文本（逐行或逐字）。当那个条件为假（也就是说，页计数器的值小于起始页或大于结束页）时，则 selpg 不再写任何输出。瞧！您得到了想输出的那些页。
 
 测试结果（这里测试数据就用lines文件，共500line）</br>
+测试数据文件为lines:</br>
+ ![image](https://github.com/wuchg6/selpg/raw/master/lines.png)</br>
 1.测试错误输入的情况</br>
  ![image](https://github.com/wuchg6/selpg/raw/master/errorTest.png)</br>
 2.测试程序的输入方式</br>

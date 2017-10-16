@@ -191,9 +191,9 @@ func processInput() {
 			}
 
 			lineCount++
-			if (lineCount == pageLen) {
+			if (lineCount > pageLen) {
 				pageCount++
-				lineCount = 0
+				lineCount = 1
 			}
 
 			if (pageCount >= startPage && pageCount <= endPage) {
